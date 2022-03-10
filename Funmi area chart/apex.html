@@ -32,17 +32,30 @@
 
             var options = {
                 chart: {
-                    type: "line",
+                    height: 280,
+                    type: "area"
+                },
+                dataLabels: {
+                    enabled: false
                 },
                 series: [
                     {
-                        name: "sales",
+                        name: "Series 1",
                         data: counts
-                    },
+                    }
                 ],
-                xaxis: {
-                    categories: dates,
+                fill: {
+                    type: "gradient",
+                    gradient: {
+                        shadeIntensity: 1,
+                        opacityFrom: 0.7,
+                        opacityTo: 0.9,
+                        stops: [0, 90, 100]
+                    }
                 },
+                xaxis: {
+                    categories: dates
+                }
             };
 
             var chart = new ApexCharts(document.querySelector("#chart"), options);
